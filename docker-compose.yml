@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  rust_client:
+    build: .
+    links:
+      - redis
+
+  redis:
+    container_name: redis
+    restart: always
+    image: redis:latest

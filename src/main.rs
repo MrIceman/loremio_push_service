@@ -7,7 +7,7 @@ use crate::data::redis_connector::RedisConnector;
 mod data;
 
 fn main() {
-    let mut connector = RedisConnector::new(String::from("127.0.0.1:6379/0"));
+    let mut connector = RedisConnector::new(String::from("redis:6379/0"));
 
     let channel_name = "push_notifications";
 

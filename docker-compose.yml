@@ -3,3 +3,10 @@ version: '3.7'
 services:
   rust_client:
     build: .
+    links:
+      - redis
+
+  redis:
+    container_name: rusty_redis
+    restart: always
+    image: redis:latest

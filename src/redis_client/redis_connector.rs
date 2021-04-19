@@ -1,5 +1,3 @@
-use std::error::Error;
-
 use redis::{Commands, Connection, FromRedisValue, ToRedisArgs, PubSub};
 
 pub struct RedisConnector {
@@ -22,7 +20,7 @@ impl RedisConnector {
         match connection {
             Ok(result) => { RedisConnector { connection: result } }
             Err(err) => {
-                panic!(err.to_string());
+                panic!("{}",err.to_string());
             }
         }
     }
